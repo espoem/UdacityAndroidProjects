@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Vazbic</string>
+    <string name="address">Adresa:</string>
+    <string name="address_value">Zemědělská 1665/1, budova\u00A0A</string>
+    <string name="email">E-mail:</string>
+    <string name="email_value">info@vazbic.cz</string>
+    <string name="open_time">Po-Pá:</string>
+    <string name="open_time_value">9:00 – 14:00</string>
+    <string name="phone">Tel.:</string>
+    <string name="phone_value">212 240 367</string>
+    <string name="head_text">Nejsilnější výrobce desek v\u00A0Brně!</string>
+</resources>
