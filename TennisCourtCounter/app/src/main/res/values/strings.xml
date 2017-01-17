@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Tennis Court Counter</string>
+    <string name="tennis_court">tennis_court</string>
+    <string name="team_a">Team A</string>
+    <string name="team_b">Team B</string>
+    <string name="new_game">New Game</string>
+    <string name="add_game">Game +</string>
+    <string name="add_score">Score +</string>
+    <string name="set">Set</string>
+</resources>

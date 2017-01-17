@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="com.example.android.tenniscourtcounter.MainActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/tennis_court"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_speciwoman_tennis_court"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:id="@+id/set_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccentOpacity"
+            android:orientation="vertical"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/ScoreTableText"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="@string/set"/>
+
+                <TextView
+                    style="@style/ScoreTableValue"
+                    android:text="1"/>
+
+                <TextView
+                    style="@style/ScoreTableValue"
+                    android:text="2"/>
+
+                <TextView
+                    style="@style/ScoreTableValue"
+                    android:text="3"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorAccent"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/ScoreTableText"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="@string/team_a"/>
+
+                <TextView
+                    android:id="@+id/set_one_team_a"
+                    style="@style/ScoreTableValue"
+                    android:text="0"/>
+
+                <TextView
+                    android:id="@+id/set_two_team_a"
+                    style="@style/ScoreTableValue"
+                    android:text="0"/>
+
+                <TextView
+                    android:id="@+id/set_three_team_a"
+                    style="@style/ScoreTableValue"
+                    android:text="0"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/ScoreTableText"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="@string/team_b"/>
+
+                <TextView
+                    android:id="@+id/set_one_team_b"
+                    style="@style/ScoreTableValue"
+                    android:text="0"/>
+
+                <TextView
+                    android:id="@+id/set_two_team_b"
+                    style="@style/ScoreTableValue"
+                    android:text="0"/>
+
+                <TextView
+                    android:id="@+id/set_three_team_b"
+                    style="@style/ScoreTableValue"
+                    android:text="0"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/colon"
+            style="@style/ScoreGame"
+            android:layout_below="@id/set_score"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="48dp"
+            android:text=":"/>
+
+        <TextView
+            android:id="@+id/game_score_team_a"
+            style="@style/ScoreGame"
+            android:layout_below="@id/set_score"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="52dp"
+            android:layout_toLeftOf="@id/colon"
+            android:text="0"/>
+
+        <TextView
+            android:id="@+id/game_score_team_b"
+            style="@style/ScoreGame"
+            android:layout_below="@id/set_score"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="52dp"
+            android:layout_toRightOf="@id/colon"
+            android:text="0"/>
+
+        <LinearLayout
+            android:id="@+id/team_a_buttons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="90dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/ButtonTeamText"
+                android:text="@string/team_a"/>
+
+            <!--<Button-->
+                <!--style="@style/ButtonText"-->
+                <!--android:onClick="addGameToTeamA"-->
+                <!--android:text="@string/add_game"/>-->
+
+            <Button
+                style="@style/ButtonText"
+                android:onClick="addScoreToTeamA"
+                android:text="@string/add_score"/>
+        </LinearLayout>
+
+        <Button
+            style="@style/ButtonText"
+            android:layout_width="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:onClick="newGame"
+            android:text="@string/new_game"/>
+
+        <LinearLayout
+            android:id="@+id/team_b_buttons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@id/team_a_buttons"
+            android:orientation="vertical">
+
+
+            <TextView
+                style="@style/ButtonTeamText"
+                android:text="@string/team_b"/>
+
+            <!--<Button-->
+                <!--style="@style/ButtonText"-->
+                <!--android:onClick="addGameToTeamB"-->
+                <!--android:text="@string/add_game"/>-->
+
+            <Button
+                style="@style/ButtonText"
+                android:onClick="addScoreToTeamB"
+                android:text="@string/add_score"/>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>
