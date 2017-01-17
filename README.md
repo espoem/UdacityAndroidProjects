@@ -6,6 +6,8 @@
 
 ## Court Counter App
 
-I made counter for tennis match. Some features are not implemented yet (tie-break, match always has 3 sets, landscape mode).
+I made a counter for tennis match. Some features are not implemented yet (tie-break, a match always has 3 sets, a better landscape mode).
 
 <img src="Screenshots/TennisCourtCounter_portrait.png" alt="Court Counter App screenshot" width="240" />
+
+<img src="Screenshots/TennisCourtCounter_landscape.png" alt="Court Counter App landscape screenshot" height="240" />
