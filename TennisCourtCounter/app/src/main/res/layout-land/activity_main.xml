@@ -9,10 +9,13 @@
     tools:context="com.example.android.tenniscourtcounter.MainActivity">
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:contentDescription="@string/tennis_court"
-        android:scaleType="centerCrop"
+        android:rotation="90"
+        android:scaleX="2.5"
+        android:scaleY="2.5"
+        android:layout_centerHorizontal="true"
         android:src="@drawable/ic_speciwoman_tennis_court"/>
 
     <RelativeLayout
@@ -118,7 +121,7 @@
             style="@style/ScoreGame"
             android:layout_below="@id/set_score"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="24dp"
             android:text=":"/>
 
         <TextView
@@ -126,7 +129,7 @@
             style="@style/ScoreGame"
             android:layout_below="@id/set_score"
             android:layout_marginRight="16dp"
-            android:layout_marginTop="52dp"
+            android:layout_marginTop="26dp"
             android:layout_toLeftOf="@id/colon"
             android:text="0"/>
 
@@ -135,7 +138,7 @@
             style="@style/ScoreGame"
             android:layout_below="@id/set_score"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="52dp"
+            android:layout_alignTop="@id/game_score_team_a"
             android:layout_toRightOf="@id/colon"
             android:text="0"/>
 
@@ -145,7 +148,6 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
-            android:layout_marginBottom="90dp"
             android:orientation="vertical">
 
             <TextView
