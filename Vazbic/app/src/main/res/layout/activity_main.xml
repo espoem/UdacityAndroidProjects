@@ -94,11 +94,12 @@
                 <TextView
                     android:id="@+id/email"
                     style="@style/InfoRowItem"
-                    android:text="@string/email" />
+                    android:text="@string/email"/>
 
                 <TextView
                     style="@style/InfoRowItemValue"
-                    android:text="@string/email_value" />
+                    android:text="@string/email_value"
+                    android:autoLink="email"/>
             </LinearLayout>
 
             <LinearLayout style="@style/InfoRow">
@@ -114,7 +115,8 @@
 
                 <TextView
                     style="@style/InfoRowItemValue"
-                    android:text="@string/phone_value" />
+                    android:text="@string/phone_value"
+                    android:autoLink="phone" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
