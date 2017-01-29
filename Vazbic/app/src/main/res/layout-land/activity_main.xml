@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context="com.example.msmid.vazbic.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white">
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:adjustViewBounds="true"
+                android:layout_marginLeft="56dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/bg_vazbic" />
+
+            <TextView
+                android:id="@+id/main_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_toRightOf="@id/logo"
+                android:layout_centerInParent="true"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:text="@string/head_text"
+                android:textAppearance="?android:textAppearanceLarge"
+                android:textSize="30sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:background="#E0E0E0"
+            android:orientation="vertical">
+
+            <LinearLayout style="@style/InfoRowLandscape">
+
+                <ImageView
+                    style="@style/InfoRowIconLandscape"
+                    android:src="@drawable/ic_place_black_24dp" />
+
+                <TextView
+                    android:id="@+id/address"
+                    style="@style/InfoRowItemLandscape"
+                    android:text="@string/address" />
+
+                <TextView
+                    style="@style/InfoRowItemValueLandscape"
+                    android:text="@string/address_value"
+                    android:id="@+id/textView" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/InfoRowLandscape">
+
+                <ImageView
+                    style="@style/InfoRowIconLandscape"
+                    android:src="@drawable/ic_calendar_interface_symbol_tool"/>
+
+                <TextView
+                    android:id="@+id/open_time"
+                    style="@style/InfoRowItemLandscape"
+                    android:text="@string/open_time" />
+
+                <TextView
+                    style="@style/InfoRowItemValueLandscape"
+                    android:text="@string/open_time_value" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/InfoRowLandscape">
+
+                <ImageView
+                    style="@style/InfoRowIconLandscape"
+                    android:src="@drawable/ic_mail_outline_black_24dp" />
+
+                <TextView
+                    android:id="@+id/email"
+                    style="@style/InfoRowItemLandscape"
+                    android:text="@string/email"/>
+
+                <TextView
+                    style="@style/InfoRowItemValueLandscape"
+                    android:text="@string/email_value"
+                    android:autoLink="email"/>
+            </LinearLayout>
+
+            <LinearLayout style="@style/InfoRowLandscape">
+
+                <ImageView
+                    style="@style/InfoRowIconLandscape"
+                    android:src="@drawable/ic_call_black_24dp" />
+
+                <TextView
+                    android:id="@+id/phone"
+                    style="@style/InfoRowItemLandscape"
+                    android:text="@string/phone" />
+
+                <TextView
+                    style="@style/InfoRowItemValueLandscape"
+                    android:text="@string/phone_value"
+                    android:autoLink="phone" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
