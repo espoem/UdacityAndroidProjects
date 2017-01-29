@@ -4,6 +4,8 @@
 
 <img src="Screenshots/Vazbic_portrait.png" alt="One Screen App screenshot" width="240" />
 
+<img src="Screenshots/Vazbic_landscape.gif" alt="One Screen App screenshot" height="240" />
+
 ## Court Counter App
 
 I made a counter for tennis match. Some features are not implemented yet (tie-break, a match always has 3 sets, a better landscape mode).
