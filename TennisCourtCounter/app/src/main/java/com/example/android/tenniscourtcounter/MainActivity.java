@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.Arrays;
+
 public class MainActivity extends AppCompatActivity {
     private int gScoreTeamA = 0;
     private int gScoreTeamB = 0;
@@ -129,12 +131,8 @@ public class MainActivity extends AppCompatActivity {
      * @param view
      */
     public void newGame(View view) {
-        setsTeamA[0] = 0;
-        setsTeamA[1] = 0;
-        setsTeamA[2] = 0;
-        setsTeamB[0] = 0;
-        setsTeamB[1] = 0;
-        setsTeamB[2] = 0;
+        Arrays.fill(setsTeamA, 0);
+        Arrays.fill(setsTeamB, 0);
         gScoreTeamA = 0;
         gScoreTeamB = 0;
 
