@@ -19,6 +19,31 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putInt("scoreTeamA", gScoreTeamA);
+        outState.putInt("scoreTeamB", gScoreTeamB);
+        outState.putIntArray("setsTeamA", setsTeamA);
+        outState.putIntArray("setsTeamB", setsTeamB);
+
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        gScoreTeamA = savedInstanceState.getInt("scoreTeamA");
+        gScoreTeamB = savedInstanceState.getInt("scoreTeamB");
+        setsTeamA = savedInstanceState.getIntArray("setsTeamA");
+        setsTeamB = savedInstanceState.getIntArray("setsTeamB");
+
+        displayScoreTeamA(gScoreTeamA);
+        displayScoreTeamB(gScoreTeamB);
+        displayGamesTeamA(setsTeamA);
+        displayGamesTeamB(setsTeamB);
+    }
+
     public void addScoreToTeamA(View view) {
         switch (gScoreTeamA) {
             case 0:
