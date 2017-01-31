@@ -4,7 +4,7 @@
 
 <img src="Screenshots/Vazbic_portrait.png" alt="One Screen App screenshot" width="240" />
 
-<img src="Screenshots/Vazbic_landscape.gif" alt="One Screen App screenshot" height="240" />
+<img src="Screenshots/Vazbic_landscape.png" alt="One Screen App screenshot" height="240" />
 
 ## Court Counter App
 
