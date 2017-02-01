@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Arrays;
 
@@ -12,6 +13,8 @@ public class MainActivity extends AppCompatActivity {
     private int gScoreTeamB = 0;
     private int[] setsTeamA = new int[3];
     private int[] setsTeamB = new int[3];
+    private int setsWonTeamA = 0;
+    private int setsWonTeamB = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
         outState.putInt("scoreTeamB", gScoreTeamB);
         outState.putIntArray("setsTeamA", setsTeamA);
         outState.putIntArray("setsTeamB", setsTeamB);
+        outState.putInt("setsWonTeamA", setsWonTeamA);
+        outState.putInt("setsWonTeamB", setsWonTeamB);
 
         super.onSaveInstanceState(outState);
     }
@@ -37,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
         gScoreTeamB = savedInstanceState.getInt("scoreTeamB");
         setsTeamA = savedInstanceState.getIntArray("setsTeamA");
         setsTeamB = savedInstanceState.getIntArray("setsTeamB");
+        setsWonTeamA = savedInstanceState.getInt("setsWonTeamA");
+        setsWonTeamB = savedInstanceState.getInt("setsWonTeamB");
 
         displayScoreTeamA(gScoreTeamA);
         displayScoreTeamB(gScoreTeamB);
@@ -44,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         displayGamesTeamB(setsTeamB);
     }
 
-    public void addScoreToTeamA(View view) {
+    private void addGameScoreToTeamA(View view) {
         switch (gScoreTeamA) {
             case 0:
                 gScoreTeamA += 15;
@@ -79,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
         displayScoreTeamA(gScoreTeamA);
     }
 
-    public void addScoreToTeamB(View view) {
+    private void addGameScoreToTeamB(View view) {
         switch (gScoreTeamB) {
             case 0:
                 gScoreTeamB += 15;
@@ -114,45 +121,102 @@ public class MainActivity extends AppCompatActivity {
         displayScoreTeamB(gScoreTeamB);
     }
 
+    private void addTiebreakScoreToTeamA(View view) {
+        if (gScoreTeamA >= 6 && gScoreTeamA - gScoreTeamB > 0) {
+            addGameToTeamA(view);
+            gScoreTeamA = 0;
+            gScoreTeamB = 0;
+            displayScoreTeamB(gScoreTeamB);
+        } else {
+            gScoreTeamA++;
+        }
+        displayScoreTeamA(gScoreTeamA);
+    }
+
+    private void addTiebreakScoreToTeamB(View view) {
+        if (gScoreTeamB >= 6 && gScoreTeamB - gScoreTeamA > 0) {
+            addGameToTeamB(view);
+            gScoreTeamA = 0;
+            gScoreTeamB = 0;
+            displayScoreTeamA(gScoreTeamA);
+        } else {
+            gScoreTeamB++;
+        }
+        displayScoreTeamB(gScoreTeamB);
+    }
+
+    public void addScoreToTeamA(View view) {
+        int currentSet = setsWonTeamA + setsWonTeamB;
+        if (setsWonTeamA < 2 && setsWonTeamB < 2) {
+            if (setsTeamA[currentSet] == 6 && setsTeamB[currentSet] == 6) {
+                addTiebreakScoreToTeamA(view);
+            } else {
+                addGameScoreToTeamA(view);
+            }
+        }
+    }
+
+    public void addScoreToTeamB(View view) {
+        int currentSet = setsWonTeamA + setsWonTeamB;
+        if (setsWonTeamA < 2 && setsWonTeamB < 2) {
+            if (setsTeamA[currentSet] == 6 && setsTeamB[currentSet] == 6) {
+                addTiebreakScoreToTeamB(view);
+            } else {
+                addGameScoreToTeamB(view);
+            }
+        }
+    }
+
     /**
      * Add a winning game to team A.
+     *
      * @param view
      */
     public void addGameToTeamA(View view) {
-        if ((setsTeamA[0] < 6 && setsTeamB[0] < 6) || (Math.abs(setsTeamA[0] - setsTeamB[0]) <
-                2)) {
-            setsTeamA[0]++;
-        } else if ((setsTeamA[1] < 6 && setsTeamB[1] < 6) || Math.abs(setsTeamA[1] -
-                setsTeamB[1]) < 2) {
-            setsTeamA[1]++;
-        } else if ((setsTeamA[2] < 6 && setsTeamB[2] < 6) || Math.abs(setsTeamA[2] -
-                setsTeamB[2]) <
-                2) {
-            setsTeamA[2]++;
+        int currentSet = setsWonTeamA + setsWonTeamB;
+        if (canAddGameToTeam(currentSet)) {
+            setsTeamA[currentSet]++;
+            if (teamAWonSet(currentSet)) {
+                setsWonTeamA++;
+            }
         }
         displayGamesTeamA(setsTeamA);
     }
 
+    private boolean canAddGameToTeam(int currentSet) {
+        return (setsTeamA[currentSet] < 6 && setsTeamB[currentSet] < 6) ||
+                (Math.abs(setsTeamA[currentSet] - setsTeamB[currentSet]) < 2);
+    }
+
+    private boolean teamAWonSet(int currentSet) {
+        return (setsTeamA[currentSet] == 7) || (setsTeamA[currentSet] == 6 &&
+                Math.abs(setsTeamA[currentSet] - setsTeamB[currentSet]) > 1);
+    }
+
+    private boolean teamBWonSet(int currentSet) {
+        return (setsTeamB[currentSet] == 7) || (setsTeamB[currentSet] == 6 &&
+                Math.abs(setsTeamA[currentSet] - setsTeamB[currentSet]) > 1);
+    }
+
     /**
      * Add a winning game to team B.
+     *
      * @param view
      */
     public void addGameToTeamB(View view) {
-        if ((setsTeamB[0] < 6 && setsTeamA[0] < 6) || Math.abs(setsTeamA[0] - setsTeamB[0]) < 2) {
-            setsTeamB[0]++;
-        } else if ((setsTeamB[1] < 6 && setsTeamA[1] < 6) || Math.abs(setsTeamA[1] -
-                setsTeamB[1]) <
-                2) {
-            setsTeamB[1]++;
-        } else if ((setsTeamB[2] < 6 && setsTeamA[2] < 6) || Math.abs(setsTeamA[2] -
-                setsTeamB[2]) < 2) {
-            setsTeamB[2]++;
+        int currentSet = setsWonTeamA + setsWonTeamB;
+        if (canAddGameToTeam(currentSet)) {
+            setsTeamB[currentSet]++;
+            if (teamBWonSet(currentSet)) {
+                setsWonTeamB++;
+            }
         }
         displayGamesTeamB(setsTeamB);
     }
 
     /**
      * Reset game.
+     *
      * @param view
      */
     public void newGame(View view) {
@@ -160,15 +224,19 @@ public class MainActivity extends AppCompatActivity {
         Arrays.fill(setsTeamB, 0);
         gScoreTeamA = 0;
         gScoreTeamB = 0;
+        setsWonTeamA = 0;
+        setsWonTeamB = 0;
 
         displayGamesTeamA(setsTeamA);
         displayGamesTeamB(setsTeamB);
         displayScoreTeamA(gScoreTeamA);
         displayScoreTeamB(gScoreTeamB);
+        Toast.makeText(this, "The game has been reset!", Toast.LENGTH_SHORT).show();
     }
 
     /**
      * Display score in game for team A.
+     *
      * @param score
      */
     public void displayScoreTeamA(int score) {
@@ -182,6 +250,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Display score in game for team B.
+     *
      * @param score
      */
     public void displayScoreTeamB(int score) {
@@ -195,6 +264,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Display games for team A.
+     *
      * @param sets
      */
     public void displayGamesTeamA(int[] sets) {
@@ -208,6 +278,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Display games for team B.
+     *
      * @param sets
      */
     public void displayGamesTeamB(int[] sets) {
