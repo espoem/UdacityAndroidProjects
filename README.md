@@ -8,7 +8,11 @@
 
 ## Court Counter App
 
-I made a counter for tennis match. Some features are not implemented yet (tie-break, a match always has 3 sets, a better landscape mode).
+I made a counter for tennis match. A match has at most three sets. A team wins when they won two sets. Activity state remains while the screen is rotated. A player is noticed when he resets the match (presses NEW GAME button).
+
+TODO:
+
+- print tiebreak score along with games in the table
 
 <img src="Screenshots/TennisCourtCounter_portrait.png" alt="Court Counter App screenshot" width="240" />
 

@@ -154,6 +154,9 @@ public class MainActivity extends AppCompatActivity {
                 addGameScoreToTeamA(view);
             }
         }
+        if (setsWonTeamA == 2) {
+            Toast.makeText(this, "Team A won", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void addScoreToTeamB(View view) {
@@ -164,6 +167,9 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 addGameScoreToTeamB(view);
             }
+        }
+        if (setsWonTeamB == 2) {
+            Toast.makeText(this, "Team B won", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -231,6 +237,7 @@ public class MainActivity extends AppCompatActivity {
         displayGamesTeamB(setsTeamB);
         displayScoreTeamA(gScoreTeamA);
         displayScoreTeamB(gScoreTeamB);
+
         Toast.makeText(this, "The game has been reset!", Toast.LENGTH_SHORT).show();
     }
 
