@@ -16,7 +16,8 @@
         android:src="@drawable/ic_speciwoman_tennis_court"/>
 
     <RelativeLayout
-        android:layout_width="wrap_content"
+        android:id="@+id/content_layout"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="16dp">
 
@@ -42,15 +43,15 @@
 
                 <TextView
                     style="@style/ScoreTableValue"
-                    android:text="1"/>
+                    android:text="@string/set_1"/>
 
                 <TextView
                     style="@style/ScoreTableValue"
-                    android:text="2"/>
+                    android:text="@string/set_2"/>
 
                 <TextView
                     style="@style/ScoreTableValue"
-                    android:text="3"/>
+                    android:text="@string/set_3"/>
             </LinearLayout>
 
             <View
@@ -72,17 +73,17 @@
                 <TextView
                     android:id="@+id/set_one_team_a"
                     style="@style/ScoreTableValue"
-                    android:text="0"/>
+                    android:text="@string/set_1_A_init"/>
 
                 <TextView
                     android:id="@+id/set_two_team_a"
                     style="@style/ScoreTableValue"
-                    android:text="0"/>
+                    android:text="@string/set_2_A_init"/>
 
                 <TextView
                     android:id="@+id/set_three_team_a"
                     style="@style/ScoreTableValue"
-                    android:text="0"/>
+                    android:text="@string/set_3_A_init"/>
             </LinearLayout>
 
             <LinearLayout
@@ -99,17 +100,17 @@
                 <TextView
                     android:id="@+id/set_one_team_b"
                     style="@style/ScoreTableValue"
-                    android:text="0"/>
+                    android:text="@string/set_1_B_init"/>
 
                 <TextView
                     android:id="@+id/set_two_team_b"
                     style="@style/ScoreTableValue"
-                    android:text="0"/>
+                    android:text="@string/set_2_B_init"/>
 
                 <TextView
                     android:id="@+id/set_three_team_b"
                     style="@style/ScoreTableValue"
-                    android:text="0"/>
+                    android:text="@string/set_3_B_init"/>
             </LinearLayout>
         </LinearLayout>
 
@@ -119,7 +120,7 @@
             android:layout_below="@id/set_score"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="48dp"
-            android:text=":"/>
+            android:text="@string/colon"/>
 
         <TextView
             android:id="@+id/game_score_team_a"
@@ -128,7 +129,7 @@
             android:layout_marginRight="16dp"
             android:layout_marginTop="52dp"
             android:layout_toLeftOf="@id/colon"
-            android:text="0"/>
+            android:text="@string/score_A_init"/>
 
         <TextView
             android:id="@+id/game_score_team_b"
@@ -137,7 +138,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="52dp"
             android:layout_toRightOf="@id/colon"
-            android:text="0"/>
+            android:text="@string/score_B_init"/>
 
         <LinearLayout
             android:id="@+id/team_a_buttons"
@@ -153,9 +154,9 @@
                 android:text="@string/team_a"/>
 
             <!--<Button-->
-                <!--style="@style/ButtonText"-->
-                <!--android:onClick="addGameToTeamA"-->
-                <!--android:text="@string/add_game"/>-->
+            <!--style="@style/ButtonText"-->
+            <!--android:onClick="addGameToTeamA"-->
+            <!--android:text="@string/add_game"/>-->
 
             <Button
                 style="@style/ButtonText"
@@ -185,9 +186,9 @@
                 android:text="@string/team_b"/>
 
             <!--<Button-->
-                <!--style="@style/ButtonText"-->
-                <!--android:onClick="addGameToTeamB"-->
-                <!--android:text="@string/add_game"/>-->
+            <!--style="@style/ButtonText"-->
+            <!--android:onClick="addGameToTeamB"-->
+            <!--android:text="@string/add_game"/>-->
 
             <Button
                 style="@style/ButtonText"

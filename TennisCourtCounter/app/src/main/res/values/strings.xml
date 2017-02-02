@@ -7,4 +7,16 @@
     <string name="add_game">Game +</string>
     <string name="add_score">Score +</string>
     <string name="set">Set</string>
+    <string name="set_1">1</string>
+    <string name="set_2">2</string>
+    <string name="set_3">3</string>
+    <string name="set_1_A_init">0</string>
+    <string name="set_2_A_init">0</string>
+    <string name="set_3_A_init">0</string>
+    <string name="set_1_B_init">0</string>
+    <string name="set_2_B_init">0</string>
+    <string name="set_3_B_init">0</string>
+    <string name="colon">:</string>
+    <string name="score_A_init">0</string>
+    <string name="score_B_init">0</string>
 </resources>
