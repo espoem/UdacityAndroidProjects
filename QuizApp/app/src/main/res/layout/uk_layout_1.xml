@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/uk_layout_1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        style="@style/QuestionLayout"
+        android:background="@drawable/frame">
+
+        <TableLayout
+            style="@style/CommonLayout">
+
+            <TableRow
+                android:gravity="center">
+
+                <ImageView
+                    style="@style/QuestionTableRowImage"
+                    android:src="@drawable/prince_harry"/>
+
+                <ImageView
+                    style="@style/QuestionTableRowImage"
+                    android:src="@drawable/prince_william"/>
+            </TableRow>
+        </TableLayout>
+
+        <TextView
+            style="@style/QuestionText"
+            android:text="@string/q_charles_sons_names"/>
+
+        <LinearLayout
+            style="@style/RadioGroupLayout"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/uk_button_1"
+                style="@style/CheckboxLayout"
+                android:tag="correct"
+                android:text="@string/prince_william"/>
+
+            <CheckBox
+                android:id="@+id/uk_button_2"
+                style="@style/CheckboxLayout"
+                android:text="@string/prince_peter"/>
+
+            <CheckBox
+                android:id="@+id/uk_button_3"
+                style="@style/CheckboxLayout"
+                android:text="@string/prince_charles"/>
+
+            <CheckBox
+                android:id="@+id/uk_button_4"
+                style="@style/CheckboxLayout"
+                android:tag="correct"
+                android:text="@string/prince_harry"/>
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

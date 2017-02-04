@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/us_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        style="@style/QuestionLayout"
+        android:background="@drawable/frame">
+
+        <TableLayout
+            style="@style/CommonLayout">
+
+            <TableRow
+                android:gravity="center">
+
+                <TextView
+                    style="@style/QuestionTableRowText"
+                    android:text="@string/washington_d_c"/>
+
+                <Button
+                    android:id="@+id/usa_anthem_button"
+                    style="@style/QuestionTableRowPlayButton"
+                    android:text="@string/play_anthem"/>
+            </TableRow>
+
+            <TableRow
+                android:gravity="center">
+
+                <ImageView
+                    style="@style/QuestionTableRowImage"
+                    android:src="@drawable/map_usa"/>
+
+                <ImageView
+                    style="@style/QuestionTableRowImage"
+                    android:src="@drawable/flag_usa"/>
+            </TableRow>
+        </TableLayout>
+
+        <TextView
+            style="@style/QuestionText"
+            android:text="@string/q_us_president"/>
+
+        <RadioGroup
+            style="@style/RadioGroupLayout">
+
+            <RadioButton
+                android:id="@+id/us_button_1"
+                style="@style/RadioButtonLayout"
+                android:tag="correct"
+                android:text="@string/donald_trump"/>
+
+            <RadioButton
+                android:id="@+id/us_button_2"
+                style="@style/RadioButtonLayout"
+                android:text="@string/barrack_obama"/>
+
+            <RadioButton
+                android:id="@+id/us_button_3"
+                style="@style/RadioButtonLayout"
+                android:text="@string/hillary_clinton"/>
+
+            <RadioButton
+                android:id="@+id/us_button_4"
+                style="@style/RadioButtonLayout"
+                android:text="@string/george_w_bush"/>
+        </RadioGroup>
+    </LinearLayout>
+</FrameLayout>

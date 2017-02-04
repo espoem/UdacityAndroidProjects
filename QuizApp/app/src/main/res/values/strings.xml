@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">QuizApp</string>
+    <string name="submit_answers">Submit answers</string>
+    <string name="play_anthem">Play anthem</string>
+    <string name="milos_zeman">Miloš Zeman</string>
+    <string name="q_czech_anthem">What is the name of this country\'s anthem?</string>
+    <string name="q_czech_anthem_o1">Where is my family?</string>
+    <string name="q_czech_anthem_o2">Where do I live?</string>
+    <string name="q_czech_anthem_o3">Where is my home?</string>
+    <string name="q_czech_anthem_o4">Where do I go?</string>
+    <string name="q_czech_capital">What is the capital of the Czech Republic?</string>
+    <string name="city_name">Name of the city</string>
+    <string name="q_charles_wife">Who was Prince Charles\' first wife?</string>
+    <string name="name">Name</string>
+    <string name="washington_d_c">Washington, D.C.</string>
+    <string name="q_us_president">Who is the President of this country?</string>
+    <string name="donald_trump">Donald Trump</string>
+    <string name="barrack_obama">Barrack Obama</string>
+    <string name="hillary_clinton">Hillary Clinton</string>
+    <string name="george_w_bush">George W. Bush</string>
+    <string name="q_charles_sons_names">What are Prince Charles\' sons names?</string>
+    <string name="prince_william">Prince William</string>
+    <string name="prince_peter">Prince Peter</string>
+    <string name="prince_charles">Prince Charles</string>
+    <string name="prince_harry">Prince Harry</string>
+</resources>

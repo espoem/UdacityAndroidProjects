@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/czech_layout_1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        style="@style/QuestionLayout"
+        android:background="@drawable/frame">
+
+        <TableLayout
+            style="@style/CommonLayout">
+
+            <TableRow
+                android:gravity="center">
+
+                <ImageView
+                    style="@style/QuestionTableRowImage"
+                    android:src="@drawable/map_czech_republic"/>
+
+                <ImageView
+                    style="@style/QuestionTableRowImage"
+                    android:src="@drawable/flag_czech_republic"/>
+            </TableRow>
+
+            <TableRow
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/czech_anthem_button"
+                    style="@style/QuestionTableRowPlayButton"
+                    android:text="@string/play_anthem"/>
+
+                <TextView
+                    style="@style/QuestionTableRowText"
+                    android:text="@string/milos_zeman"/>
+            </TableRow>
+        </TableLayout>
+
+        <TextView
+            style="@style/QuestionText"
+            android:text="@string/q_czech_anthem"/>
+
+        <RadioGroup
+            style="@style/RadioGroupLayout">
+
+            <RadioButton
+                android:id="@+id/czech_button_1"
+                style="@style/RadioButtonLayout"
+                android:text="@string/q_czech_anthem_o1"/>
+
+            <RadioButton
+                android:id="@+id/czech_button_2"
+                style="@style/RadioButtonLayout"
+                android:text="@string/q_czech_anthem_o2"/>
+
+            <RadioButton
+                android:id="@+id/czech_button_3"
+                style="@style/RadioButtonLayout"
+                android:tag="correct"
+                android:text="@string/q_czech_anthem_o3"/>
+
+            <RadioButton
+                android:id="@+id/czech_button_4"
+                style="@style/RadioButtonLayout"
+                android:text="@string/q_czech_anthem_o4"/>
+        </RadioGroup>
+    </LinearLayout>
+</FrameLayout>

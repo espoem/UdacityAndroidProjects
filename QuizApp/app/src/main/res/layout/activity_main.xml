@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context="com.example.android.quizapp.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/questions_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include
+                layout="@layout/czech_layout_1"/>
+
+            <include
+                layout="@layout/czech_layout_2"/>
+
+            <include
+                layout="@layout/usa_layout"/>
+
+            <include
+                layout="@layout/uk_layout_1"/>
+
+            <include
+                layout="@layout/uk_layout_2"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/submit_answers_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/questions_layout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/button_bg"
+            android:onClick="submit"
+            android:padding="4dp"
+            android:text="@string/submit_answers"/>
+
+        <TextView
+            android:id="@+id/final_score_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/submit_answers_button"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:visibility="gone"/>
+    </RelativeLayout>
+</ScrollView>
