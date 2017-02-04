@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<CompoundButton> buttons = new ArrayList<>();
     private ArrayList<EditText> editTexts = new ArrayList<>();
     private int maxScore;
+    private int score;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
      * @param view
      */
     public void submit(View view) {
-        int score = 0;
+        score = 0;
 //        check radio buttons and checkboxes
         for (CompoundButton button : buttons) {
             if (button.getTag() != null) {
@@ -122,37 +123,14 @@ public class MainActivity extends AppCompatActivity {
 
 //        check edit texts
         for (EditText et : editTexts) {
-            TextView tv;
             switch (et.getId()) {
                 case R.id.charles_wife_edit_text:
-                    tv = (TextView) findViewById(R.id.charles_wife_answer_text_view);
-                    if (et.getText().toString().toLowerCase().contains("diana")) {
-                        et.setBackgroundColor(Color.GREEN);
-                        if (tv.getVisibility() == View.VISIBLE) {
-                            tv.setVisibility(View.GONE);
-                        }
-                        score++;
-                    } else {
-                        et.setBackgroundResource(0);
-                        tv.setBackgroundColor(Color.RED);
-                        tv.setText(String.valueOf("Correct answer: Princess Diana"));
-                        tv.setVisibility(View.VISIBLE);
-                    }
+                    checkEditTexts(et, R.id.charles_wife_answer_text_view, "diana",
+                            "Princess Diana");
                     break;
                 case R.id.czech_capital_edit_text:
-                    tv = (TextView) findViewById(R.id.czech_capital_answer_text_view);
-                    if (et.getText().toString().toLowerCase().contains("prague")) {
-                        et.setBackgroundColor(Color.GREEN);
-                        if (tv.getVisibility() == View.VISIBLE) {
-                            tv.setVisibility(View.GONE);
-                        }
-                        score++;
-                    } else {
-                        et.setBackgroundResource(0);
-                        tv.setBackgroundColor(Color.RED);
-                        tv.setText(String.valueOf("Correct answer: Prague"));
-                        tv.setVisibility(View.VISIBLE);
-                    }
+                    checkEditTexts(et, R.id.czech_capital_answer_text_view, "prague",
+                            "Prague");
                     break;
                 default:
                     break;
@@ -164,5 +142,22 @@ public class MainActivity extends AppCompatActivity {
         String msg = "Final score: " + score + " of " + maxScore;
         tv.setText(msg);
         tv.setVisibility(View.VISIBLE);
+    }
+
+    private void checkEditTexts(EditText et, int idAnswerText, String keyWord,
+                                String correctAnswer) {
+        TextView tv = (TextView) findViewById(idAnswerText);
+        if (et.getText().toString().toLowerCase().contains(keyWord)) {
+            et.setBackgroundColor(Color.GREEN);
+            if (tv.getVisibility() == View.VISIBLE) {
+                tv.setVisibility(View.GONE);
+            }
+            score++;
+        } else {
+            et.setBackgroundResource(0);
+            tv.setBackgroundColor(Color.RED);
+            tv.setText(String.valueOf("Correct answer: " + correctAnswer));
+            tv.setVisibility(View.VISIBLE);
+        }
     }
 }
