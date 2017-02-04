@@ -17,3 +17,11 @@ TODO:
 <img src="Screenshots/TennisCourtCounter_portrait.png" alt="Court Counter App screenshot" width="240" />
 
 <img src="Screenshots/TennisCourtCounter_landscape.png" alt="Court Counter App landscape screenshot" height="240" />
+
+## Quiz App
+
+There are 5 questions, each answer is for 1 point.
+
+<img src="Screenshots/QuizApp_portrait.gif" alt="Court Counter App screenshot" width="240" />
+
+
